@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>Sudoku_v1</title>
+<style>
+td.Square01 {border-top: solid 6px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 6px;}
+td.Square02 {border-top: solid 6px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square03 {border-top: solid 6px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square04 {border-top: solid 6px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square05 {border-top: solid 6px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square06 {border-top: solid 6px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square07 {border-top: solid 6px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square08 {border-top: solid 6px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square09 {border-top: solid 6px; border-right: solid 6px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square10 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 6px;}
+td.Square11 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square12 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square13 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square14 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square15 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square16 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square17 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square18 {border-top: solid 1px; border-right: solid 6px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square19 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 6px;}
+td.Square20 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square21 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square22 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 3px;}
+td.Square23 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square24 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square25 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 3px;}
+td.Square26 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square27 {border-top: solid 1px; border-right: solid 6px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square28 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 6px;}
+td.Square29 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square30 {border-top: solid 3px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square31 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square32 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square33 {border-top: solid 3px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square34 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square35 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square36 {border-top: solid 3px; border-right: solid 6px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square37 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 6px;}
+td.Square38 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square39 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square40 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square41 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square42 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square43 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square44 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square45 {border-top: solid 1px; border-right: solid 6px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square46 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 6px;}
+td.Square47 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square48 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square49 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 3px;}
+td.Square50 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square51 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square52 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 3px;}
+td.Square53 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square54 {border-top: solid 1px; border-right: solid 6px; border-bottom: solid 3px; border-left: solid 1px;}
+td.Square55 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 6px;}
+td.Square56 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square57 {border-top: solid 3px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square58 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square59 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square60 {border-top: solid 3px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square61 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square62 {border-top: solid 3px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square63 {border-top: solid 3px; border-right: solid 6px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square64 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 6px;}
+td.Square65 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square66 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square67 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square68 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square69 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square70 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 3px;}
+td.Square71 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square72 {border-top: solid 1px; border-right: solid 6px; border-bottom: solid 1px; border-left: solid 1px;}
+td.Square73 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 6px; border-left: solid 6px;}
+td.Square74 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 6px; border-left: solid 1px;}
+td.Square75 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 6px; border-left: solid 1px;}
+td.Square76 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 6px; border-left: solid 3px;}
+td.Square77 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 6px; border-left: solid 1px;}
+td.Square78 {border-top: solid 1px; border-right: solid 3px; border-bottom: solid 6px; border-left: solid 1px;}
+td.Square79 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 6px; border-left: solid 3px;}
+td.Square80 {border-top: solid 1px; border-right: solid 1px; border-bottom: solid 6px; border-left: solid 1px;}
+td.Square81 {border-top: solid 1px; border-right: solid 6px; border-bottom: solid 6px; border-left: solid 1px;}
+</style>
+</head>
+<body>
+<table align=center cellspacing=0>
+ <tr>
+  <td class="Square01"><img src="blank.JPG"></td>
+  <td class="Square02"><img src="5.JPG"></td>
+  <td class="Square03"><img src="blank.JPG"></td>
+  <td class="Square04"><img src="blank.JPG"></td>
+  <td class="Square05"><img src="blank.JPG"></td>
+  <td class="Square06"><img src="blank.JPG"></td>
+  <td class="Square07"><img src="blank.JPG"></td>
+  <td class="Square08"><img src="4.JPG"></td>
+  <td class="Square09"><img src="1.JPG"></td>
+ </tr>
+ <tr>
+  <td class="Square10"><img src="blank.JPG"></td>
+  <td class="Square11"><img src="blank.JPG"></td>
+  <td class="Square12"><img src="blank.JPG"></td>
+  <td class="Square13"><img src="blank.JPG"></td>
+  <td class="Square14"><img src="blank.JPG"></td>
+  <td class="Square15"><img src="blank.JPG"></td>
+  <td class="Square16"><img src="8.JPG"></td>
+  <td class="Square17"><img src="2.JPG"></td>
+  <td class="Square18"><img src="blank.JPG"></td>
+ </tr>
+ <tr>
+  <td class="Square19"><img src="blank.JPG"></td>
+  <td class="Square20"><img src="blank.JPG"></td>
+  <td class="Square21"><img src="blank.JPG"></td>
+  <td class="Square22"><img src="blank.JPG"></td>
+  <td class="Square23"><img src="blank.JPG"></td>
+  <td class="Square24"><img src="blank.JPG"></td>
+  <td class="Square25"><img src="blank.JPG"></td>
+  <td class="Square26"><img src="blank.JPG"></td>
+  <td class="Square27"><img src="9.JPG"></td>
+ </tr>
+ <tr>
+  <td class="Square28"><img src="2.JPG"></td>
+  <td class="Square29"><img src="9.JPG"></td>
+  <td class="Square30"><img src="blank.JPG"></td>
+  <td class="Square31"><img src="blank.JPG"></td>
+  <td class="Square32"><img src="1.JPG"></td>
+  <td class="Square33"><img src="5.JPG"></td>
+  <td class="Square34"><img src="blank.JPG"></td>
+  <td class="Square35"><img src="blank.JPG"></td>
+  <td class="Square36"><img src="3.JPG"></td>
+ </tr>
+ <tr>
+  <td class="Square37"><img src="blank.JPG"></td>
+  <td class="Square38"><img src="blank.JPG"></td>
+  <td class="Square39"><img src="7.JPG"></td>
+  <td class="Square40"><img src="blank.JPG"></td>
+  <td class="Square41"><img src="8.JPG"></td>
+  <td class="Square42"><img src="blank.JPG"></td>
+  <td class="Square43"><img src="4.JPG"></td>
+  <td class="Square44"><img src="5.JPG"></td>
+  <td class="Square45"><img src="blank.JPG"></td>
+ </tr>
+ <tr>
+  <td class="Square46"><img src="blank.JPG"></td>
+  <td class="Square47"><img src="blank.JPG"></td>
+  <td class="Square48"><img src="4.JPG"></td>
+  <td class="Square49"><img src="blank.JPG"></td>
+  <td class="Square50"><img src="blank.JPG"></td>
+  <td class="Square51"><img src="2.JPG"></td>
+  <td class="Square52"><img src="blank.JPG"></td>
+  <td class="Square53"><img src="blank.JPG"></td>
+  <td class="Square54"><img src="blank.JPG"></td>
+ </tr>
+ <tr>
+  <td class="Square55"><img src="8.JPG"></td>
+  <td class="Square56"><img src="blank.JPG"></td>
+  <td class="Square57"><img src="blank.JPG"></td>
+  <td class="Square58"><img src="blank.JPG"></td>
+  <td class="Square59"><img src="9.JPG"></td>
+  <td class="Square60"><img src="blank.JPG"></td>
+  <td class="Square61"><img src="7.JPG"></td>
+  <td class="Square62"><img src="1.JPG"></td>
+  <td class="Square63"><img src="blank.JPG"></td>
+ </tr>
+ <tr>
+  <td class="Square64"><img src="blank.JPG"></td>
+  <td class="Square65"><img src="6.JPG"></td>
+  <td class="Square66"><img src="blank.JPG"></td>
+  <td class="Square67"><img src="blank.JPG"></td>
+  <td class="Square68"><img src="blank.JPG"></td>
+  <td class="Square69"><img src="1.JPG"></td>
+  <td class="Square70"><img src="blank.JPG"></td>
+  <td class="Square71"><img src="blank.JPG"></td>
+  <td class="Square72"><img src="blank.JPG"></td>
+ </tr>
+ <tr>
+  <td class="Square73"><img src="blank.JPG"></td>
+  <td class="Square74"><img src="blank.JPG"></td>
+  <td class="Square75"><img src="3.JPG"></td>
+  <td class="Square76"><img src="blank.JPG"></td>
+  <td class="Square77"><img src="blank.JPG"></td>
+  <td class="Square78"><img src="blank.JPG"></td>
+  <td class="Square79"><img src="blank.JPG"></td>
+  <td class="Square80"><img src="blank.JPG"></td>
+  <td class="Square81"><img src="blank.JPG"></td>
+ </tr>
+</table>
+</html>
